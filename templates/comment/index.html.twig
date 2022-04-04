@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Commentaire{% endblock %}
+
+{% block body %}
+<div class="container">
+        <div class="row row-cols-1 row-cols-md-3 ">
+            
+            {% for comment in comments %} 
+            <div class="col">
+
+                <div class="card border-3 mt-5">
+                    <div class="card-body ">   
+                        <p class="text-justify">{{comment.description}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <ul class='list-inline d-flex justify-content-between align-content-center'>
+                            <li class='list-item'><small class="text-muted">{{comment.autor.email}}</small></li>
+                            <li class='list-item'><small class="text-muted">{{comment.date | date('Y-m-d')}}</small></li>
+                        
+                        </ul>
+                        
+                    </div>
+                </div>
+
+            
+            </div>
+                
+             {% endfor %}
+    </div>
+
+</div>
+    
+
+        
+{% endblock %}
